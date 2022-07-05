@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    
+  
+  </head>
+  <body>
+    <a-scene>
+
+      <a-assets>
+        <img id="sky" src="https://as1.ftcdn.net/v2/jpg/02/92/51/38/1000_F_292513860_NVo9rkLzGSj1czeBwd8dSaHqdoPifnBt.jpg"/>
+          
+          <img id="logo" src="assets/logo.png"/>
+        <a-asset-item id="village" src="assets/scene.gltf"></a-asset-item>
+          <a-asset-item id="coin" src="assets/bit_coin/scene.gltf"></a-asset-item>
+          
+          <a-asset-item id="coin2" src="assets/bit_coin/scene.gltf"></a-asset-item>
+          
+      </a-assets>
+
+      <a-sky src="#sky">
+
+      </a-sky>
+        <a-entity position="0 -1.58 0.7"
+                  >
+            <a-camera
+                      camera look-controls wasd-controls="acceleration: 2"
+                      user-height="1.619"
+                      ></a-camera>
+        </a-entity>
+        
+        <a-entity gltf-model="#village">
+        </a-entity>
+        
+
+<!--
+        <a-entity gltf-model="#coin"
+                  position="0 0 0.7"
+                  scale="0.1 0.5 0.5"
+                  width="0.2"
+                  height="0.2"
+                  side="double"
+                  >
+            <a-animation
+                         attribute="rotate"
+                         to="0 360 0"
+                         repeat="2 "
+>
+            </a-animation>
+ </a-entity>
+-->
+            
+            <a-circle color="#aa0000" position="0.02 0.04 0.6"
+                   scale="0.02 0.02 0.02"
+                      side="double"
+                       gltf-model="#coin"
+                   >
+                <a-animation
+                             attribute="rotation"
+                             to="0 360 0"
+                             repeat="indefinite"
+                             dur="3000"
+                             direction="alternate"
+                             ></a-animation>
+            </a-circle>
+        
+        
+        <a-circle color="#aa0000" position="0 0.02 0"
+                   scale="0.02 0.02 0.02"
+                      side="double"
+                       gltf-model="#coin2"
+                   >
+                <a-animation
+                             attribute="rotation"
+                             to="0 360 0"
+                             repeat="indefinite"
+                             dur="3000"
+                             direction="alternate"
+                             ></a-animation>
+            </a-circle>
+        
+<!--
+        <a-entity position="0.02 0.01 0.6">
+                <a-animation
+                             attribute="rotation"
+                             to="0 -360 0"
+                             repeat="indefinite"
+                             dur="3000"
+                             easing="linear"
+                             direction="alternate"
+                             ></a-animation>
+            
+             <a-circle   position="0.03 0.03 0"
+                   scale="0.008 0.008 0.008"
+                       side="double"
+                      
+                   >
+            </a-circle>
+
+        </a-entity>
+-->
+        
+        
+       
+       
+
+
+    </a-scene>
+  </body>
+</html>
